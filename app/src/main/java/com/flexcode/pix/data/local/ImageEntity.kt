@@ -2,7 +2,7 @@ package com.flexcode.pix.data.local
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.flexcode.pix.domain.Image
+import com.flexcode.pix.domain.model.Image
 
 @Entity
 data class ImageEntity(

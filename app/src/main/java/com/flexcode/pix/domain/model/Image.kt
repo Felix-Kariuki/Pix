@@ -1,4 +1,4 @@
-package com.flexcode.pix.domain
+package com.flexcode.pix.domain.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

@@ -1,5 +1,6 @@
-package com.flexcode.pix.data.remote.dto
+package com.flexcode.pix.data.remote
 
+import com.flexcode.pix.data.remote.dto.ImageDto
 import java.io.Serializable
 
 data class ImageResponse(

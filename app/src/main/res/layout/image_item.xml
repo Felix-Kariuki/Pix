@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:contentDescription="Image"
+                android:src="@mipmap/ic_launcher"
+                />
+
+            <TextView
+                android:id="@+id/tvImageName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="German Shephard"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_toEndOf="@+id/ivImage"
+                android:layout_marginStart="10dp"/>
+
+            <ImageView
+                android:id="@+id/ivSave"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:contentDescription="save"
+                android:src="@drawable/ic_save"
+                android:layout_alignParentEnd="true"
+                android:padding="10dp"
+                android:layout_marginTop="-10dp" />
+
+            <ImageView
+                android:id="@+id/ivLikes"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:contentDescription="likes"
+                android:src="@drawable/ic_like"
+                android:layout_marginTop="5dp"
+                android:padding="7dp"
+                android:layout_toEndOf="@+id/ivImage"
+                android:layout_below="@+id/tvImageName" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1255"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"
+                android:textSize="16sp"
+                android:layout_toEndOf="@id/ivLikes"
+                android:layout_below="@id/tvImageName"/>
+
+            <ImageView
+                android:id="@+id/ivComment"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:contentDescription="comment"
+                android:src="@drawable/ic_comment"
+                android:layout_marginTop="-5dp"
+                android:padding="7dp"
+                android:layout_toEndOf="@+id/ivImage"
+                android:layout_below="@+id/ivLikes" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15000"
+                android:textStyle="bold"
+                android:layout_marginTop="2dp"
+                android:textSize="16sp"
+                android:layout_toEndOf="@id/ivComment"
+                android:layout_below="@id/ivLikes"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
