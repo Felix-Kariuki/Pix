@@ -1,4 +1,4 @@
-package com.flexcode.pix.data.remote
+package com.flexcode.pix.data.remote.dto
 
 import com.flexcode.pix.data.remote.dto.ImageDto
 import java.io.Serializable

@@ -7,9 +7,9 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -27,15 +27,15 @@
                 />
 
             <TextView
-                android:id="@+id/tvImageName"
+                android:id="@+id/tvUserName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="German Shephard"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
+                android:layout_marginStart="10dp"
                 android:layout_toEndOf="@+id/ivImage"
-                android:layout_marginStart="10dp"/>
+                android:text="John Doe"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/ivSave"
@@ -56,17 +56,18 @@
                 android:layout_marginTop="5dp"
                 android:padding="7dp"
                 android:layout_toEndOf="@+id/ivImage"
-                android:layout_below="@+id/tvImageName" />
+                android:layout_below="@+id/tvUserName" />
 
             <TextView
+                android:id="@+id/tvLikes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1255"
-                android:textStyle="bold"
+                android:layout_below="@id/tvUserName"
                 android:layout_marginTop="12dp"
-                android:textSize="16sp"
                 android:layout_toEndOf="@id/ivLikes"
-                android:layout_below="@id/tvImageName"/>
+                android:text="1255"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/ivComment"
@@ -80,14 +81,15 @@
                 android:layout_below="@+id/ivLikes" />
 
             <TextView
+                android:id="@+id/tvComments"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="15000"
-                android:textStyle="bold"
+                android:layout_below="@id/ivLikes"
                 android:layout_marginTop="2dp"
-                android:textSize="16sp"
                 android:layout_toEndOf="@id/ivComment"
-                android:layout_below="@id/ivLikes"/>
+                android:text="15000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
         </RelativeLayout>
 
