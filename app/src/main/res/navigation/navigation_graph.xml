@@ -25,7 +25,11 @@
         android:id="@+id/imageDetailFragment"
         android:name="com.flexcode.pix.presentation.ui.fragments.ImageDetailFragment"
         android:label="fragment_image_detail"
-        tools:layout="@layout/fragment_image_detail" />
+        tools:layout="@layout/fragment_image_detail" >
+        <argument
+            android:name="imageDetails"
+            app:argType="com.flexcode.pix.domain.model.Image"/>
+    </fragment>
     <fragment
         android:id="@+id/savedFragment"
         android:name="com.flexcode.pix.presentation.ui.fragments.SavedFragment"

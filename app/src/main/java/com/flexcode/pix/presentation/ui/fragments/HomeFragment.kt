@@ -5,9 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.flexcode.pix.databinding.FragmentHomeBinding
 import com.flexcode.pix.presentation.adapters.ImageAdapter
 import com.flexcode.pix.presentation.viewModels.ImageViewModel
@@ -16,7 +16,6 @@ import com.flexcode.pix.util.invisible
 import com.flexcode.pix.util.showSnackbar
 import com.flexcode.pix.util.visible
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
@@ -36,7 +35,8 @@ class HomeFragment : Fragment() {
 
         adapter = ImageAdapter(ImageAdapter.OnClickListener {
             //navigate to details
-
+            val action = HomeFragmentDirections.actionHomeFragmentToImageDetailFragment(it)
+            findNavController().navigate(action)
         })
 
         return binding.root

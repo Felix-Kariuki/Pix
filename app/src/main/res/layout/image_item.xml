@@ -38,14 +38,14 @@
                 android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/ivSave"
+                android:id="@+id/ivFav"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:contentDescription="save"
-                android:src="@drawable/ic_save"
                 android:layout_alignParentEnd="true"
+                android:layout_marginTop="-10dp"
+                android:contentDescription="save"
                 android:padding="10dp"
-                android:layout_marginTop="-10dp" />
+                android:src="@drawable/ic_favorite_border" />
 
             <ImageView
                 android:id="@+id/ivLikes"
