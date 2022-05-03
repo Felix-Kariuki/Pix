@@ -1,6 +1,8 @@
 package com.flexcode.pix.data.repository
 
 import com.flexcode.pix.data.local.Dao
+import com.flexcode.pix.data.local.Database
+import com.flexcode.pix.data.local.VideoDatabase
 import com.flexcode.pix.data.mapper.toImage
 import com.flexcode.pix.data.mapper.toImageEntity
 import com.flexcode.pix.data.remote.ApiService
@@ -11,16 +13,21 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
 import java.io.IOException
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class ImageRepositoryImpl(
+@Singleton
+class ImageRepositoryImpl @Inject constructor(
     private val apiService: ApiService,
     private val dao: Dao
 ): ImageRepository {
+
     override fun getImages(name: String): Flow<Resource<List<Image>>> = flow{
 
         emit(Resource.Loading())
 
         val images = dao.getImages(name).map { it.toImage() }
+
         emit(Resource.Loading(data = images))
 
         try {
