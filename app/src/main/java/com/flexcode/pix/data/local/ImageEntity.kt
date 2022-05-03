@@ -28,39 +28,4 @@ data class ImageEntity(
     val userId: Int,
     val user: String,
     val userImageURL: String
-){
-        /*
-                *
-                * map Image entity to Image domain data class
-                * use a util entity mapper fun
-                *
-         */
-
-        fun toImage(): Image {
-                return Image(
-                        id = id,
-                        pageURL = pageURL,
-                        type = type,
-                        tags = tags,
-                        previewURL = previewURL,
-                        previewWidth = previewWidth,
-                        previewHeight = previewHeight,
-                        webformatURL = webformatURL,
-                        webformatWidth = webformatWidth,
-                        webformatHeight = webformatHeight,
-                        largeImageURL = largeImageURL,
-                        imageWidth = imageWidth,
-                        imageHeight = imageHeight,
-                        imageSize = imageSize,
-                        views = views,
-                        downloads = downloads,
-                        collections = collections,
-                        likes = likes,
-                        comments = comments,
-                        userId = userId,
-                        user = user,
-                        userImageURL = userImageURL,
-                )
-        }
-
-}
+)

@@ -1,6 +1,8 @@
 package com.flexcode.pix.data.repository
 
 import com.flexcode.pix.data.local.Dao
+import com.flexcode.pix.data.mapper.toImage
+import com.flexcode.pix.data.mapper.toImageEntity
 import com.flexcode.pix.data.remote.ApiService
 import com.flexcode.pix.domain.model.Image
 import com.flexcode.pix.domain.repository.ImageRepository
@@ -22,9 +24,9 @@ class ImageRepositoryImpl(
         emit(Resource.Loading(data = images))
 
         try {
-            val remoImages = apiService.searchImages(name)
+            val remoImages = apiService.getImages(name)
             dao.deleteImages(remoImages.hits.map { it.previewURL })
-            dao.insertImages(remoImages.hits.map { it.mapToImageEntity() })
+            dao.insertImages(remoImages.hits.map { it.toImageEntity() })
 
         }catch (e:HttpException) {
             emit(
