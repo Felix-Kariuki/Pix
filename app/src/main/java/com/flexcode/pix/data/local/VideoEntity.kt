@@ -3,6 +3,7 @@ package com.flexcode.pix.data.local
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.flexcode.pix.domain.model.Video
+import com.flexcode.pix.domain.model.Videos
 
 @Entity
 data class VideoEntity(
@@ -12,7 +13,7 @@ data class VideoEntity(
     val tags: String,
     val duration: Int,
     val picture_id: String,
-    val videos: String,
+    val videos: Videos? = Videos(),
     val views: Int,
     val downloads: Int,
     val likes: Int,

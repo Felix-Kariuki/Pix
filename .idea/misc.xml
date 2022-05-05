@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/ANDROID/2 WORK/Pix/app/src/main/res/drawable/ic_video.xml" value="0.1" />
         <entry key="..\:/ANDROID/2 WORK/Pix/app/src/main/res/layout/activity_main.xml" value="0.176" />
         <entry key="..\:/ANDROID/2 WORK/Pix/app/src/main/res/layout/fragment_home.xml" value="0.152" />
         <entry key="..\:/ANDROID/2 WORK/Pix/app/src/main/res/layout/fragment_image_detail.xml" value="0.25" />
@@ -11,6 +12,7 @@
         <entry key="..\:/ANDROID/2 WORK/Pix/app/src/main/res/layout/fragment_videos.xml" value="0.25" />
         <entry key="..\:/ANDROID/2 WORK/Pix/app/src/main/res/layout/image_item.xml" value="0.25" />
         <entry key="..\:/ANDROID/2 WORK/Pix/app/src/main/res/layout/tag_item.xml" value="0.25" />
+        <entry key="..\:/ANDROID/2 WORK/Pix/app/src/main/res/layout/video_item.xml" value="0.25" />
         <entry key="..\:/ANDROID/2 WORK/Pix/app/src/main/res/menu/bottom_menu.xml" value="0.25" />
       </map>
     </option>

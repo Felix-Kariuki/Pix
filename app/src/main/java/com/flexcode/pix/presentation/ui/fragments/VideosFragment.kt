@@ -5,16 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.flexcode.pix.R
 import com.flexcode.pix.databinding.FragmentVideosBinding
+import com.flexcode.pix.presentation.adapters.VideoAdapter
 import com.flexcode.pix.presentation.viewModels.ImageViewModel
 import com.flexcode.pix.presentation.viewModels.VideoViewModel
-import com.flexcode.pix.util.Resource
-import com.flexcode.pix.util.invisible
-import com.flexcode.pix.util.showSnackbar
-import com.flexcode.pix.util.visible
+import com.flexcode.pix.util.*
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -23,6 +22,7 @@ class VideosFragment : Fragment() {
     private var _binding: FragmentVideosBinding? = null
     private val binding get() = _binding!!
     private val viewModel: VideoViewModel by viewModels()
+    private lateinit var videoAdapter: VideoAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,6 +31,15 @@ class VideosFragment : Fragment() {
 
         _binding = FragmentVideosBinding.inflate(inflater,container,false)
 
+        videoAdapter = VideoAdapter(VideoAdapter.OnClickListener {
+            //TODO : navigate
+            //TODO: play
+
+        })
+
+        binding.videoSearchView.setEndIconOnClickListener {
+            //TODO : Search Videos
+        }
 
         viewModel.searchQuery.value?.let { subscribeToObservers(it) }
 
@@ -39,21 +48,26 @@ class VideosFragment : Fragment() {
 
     private fun subscribeToObservers(s: String) {
         viewLifecycleOwner.lifecycleScope.launchWhenCreated {
-            viewModel.onSearch(s.trim()).collect { image->
-                when(image) {
+            viewModel.onSearch(s.trim()).collect { video->
+                when(video) {
                     is Resource.Success -> {
-                        showSnackbar("success")
+                        binding.videosProgressBar.visibility = View.GONE
+                        binding.rvVideos.visibility = View.VISIBLE
 
-                        if (image.data?.isEmpty()!!){
+                        if (video.data?.isEmpty()!!){
                             showSnackbar("Try Again")
                         }else {
-                            showSnackbar("success")
+                            videoAdapter.submitList(video.data)
+                            binding.rvVideos.adapter = videoAdapter
                         }
                     }
                     is Resource.Error -> {
-                        showSnackbar("Error: ${image.message}")
+                        binding.videosProgressBar.visibility = View.VISIBLE
+                        binding.rvVideos.visibility = View.VISIBLE
+                        showSnackbar("Error: ${video.message}")
                     }
                     is Resource.Loading -> {
+                        binding.videosProgressBar.visibility = View.GONE
                     }
                 }
             }

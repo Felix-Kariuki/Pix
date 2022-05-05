@@ -11,7 +11,7 @@ data class Video(
     val tags: String,
     val duration: Int,
     val picture_id: String,
-    val videos: String,
+    val videos: Videos? = Videos(),
     val views: Int,
     val downloads: Int,
     val likes: Int,

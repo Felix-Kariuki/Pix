@@ -54,7 +54,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        android:indeterminateTint="@color/red"
+        android:indeterminateTint="@color/green"
         android:indeterminateTintMode="src_in"
         app:layout_constraintBottom_toBottomOf="@+id/rvImages"
         app:layout_constraintEnd_toEndOf="@+id/rvImages"

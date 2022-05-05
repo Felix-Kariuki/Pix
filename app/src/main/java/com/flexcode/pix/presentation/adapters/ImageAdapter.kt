@@ -18,7 +18,7 @@ class ImageAdapter(private val onClickListener: OnClickListener) :
         fun bind(image: Image?) {
             Glide.with(binding.ivImage)
                 .load(image?.webformatURL)
-                .placeholder(R.drawable.ic_launcher_background)
+                .placeholder(R.drawable.ic_image)
                 .into(binding.ivImage)
             binding.tvUserName.text = image?.user
             binding.tvLikes.text = image?.likes.toString()

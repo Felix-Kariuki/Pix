@@ -2,8 +2,11 @@ package com.flexcode.pix.di
 
 import android.app.Application
 import androidx.room.Room
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 import com.flexcode.pix.data.local.Database
 import com.flexcode.pix.data.local.VideoDatabase
+import com.flexcode.pix.data.remote.ApiService
 import com.flexcode.pix.data.repository.ImageRepositoryImpl
 import com.flexcode.pix.data.repository.VideoRepositoryImpl
 import com.flexcode.pix.domain.repository.ImageRepository
@@ -22,7 +25,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
-import com.flexcode.pix.data.remote.ApiService as ApiService
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -52,17 +54,17 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun providesOkHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient{
+    fun providesOkHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
         val okHttpClient = OkHttpClient.Builder()
             .addInterceptor(httpLoggingInterceptor)
-            .connectTimeout(15,TimeUnit.SECONDS)
+            .connectTimeout(15, TimeUnit.SECONDS)
         return okHttpClient.build()
     }
 
     @Provides
     @Singleton
     fun providesImageRepository(
-        db : Database,
+        db: Database,
         apiService: ApiService
     ): ImageRepository {
         return ImageRepositoryImpl(
@@ -76,7 +78,7 @@ object AppModule {
     fun provideVideoRepository(
         db: VideoDatabase,
         apiService: ApiService
-    ): VideoRepository{
+    ): VideoRepository {
         return VideoRepositoryImpl(
             apiService = apiService,
             dao = db.videoDao
@@ -86,22 +88,24 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun providesVideoDatabase(application: Application) : VideoDatabase{
+    fun providesVideoDatabase(application: Application): VideoDatabase {
         return Room.databaseBuilder(
             application,
             VideoDatabase::class.java,
             "local_video_db"
-        ).build()
+        ).fallbackToDestructiveMigration()
+            .build()
     }
 
     @Provides
     @Singleton
-    fun providesDatabase(application: Application) : Database{
+    fun providesDatabase(application: Application): Database {
         return Room.databaseBuilder(
             application,
             Database::class.java,
             "local_db"
-        ).build()
+        )
+            .build()
     }
 
     @Provides

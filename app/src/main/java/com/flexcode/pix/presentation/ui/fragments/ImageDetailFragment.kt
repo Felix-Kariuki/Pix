@@ -35,12 +35,12 @@ class ImageDetailFragment : Fragment() {
             binding.tvUser.text = image?.user
             Glide.with(binding.ivUserImageUrl)
                 .load(image?.userImageURL)
-                .placeholder(R.drawable.ic_launcher_background)
+                .placeholder(R.drawable.ic__person)
                 .into(binding.ivUserImageUrl)
 
             Glide.with(binding.ivDetailImage)
                 .load(image?.webformatURL)
-                .placeholder(R.drawable.ic_launcher_background)
+                .placeholder(R.drawable.ic_image)
                 .into(binding.ivDetailImage)
             binding.tvLikes.text = image?.likes.toString()
             binding.tvDetailComments.text = image?.comments.toString()

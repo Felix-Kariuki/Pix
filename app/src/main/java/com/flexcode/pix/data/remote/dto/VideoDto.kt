@@ -1,6 +1,7 @@
 package com.flexcode.pix.data.remote.dto
 
 import com.flexcode.pix.data.local.VideoEntity
+import com.flexcode.pix.domain.model.Videos
 
 data class VideoDto(
     val id: Int,
@@ -9,7 +10,7 @@ data class VideoDto(
     val tags: String,
     val duration: Int,
     val picture_id: String,
-    val videos: String,
+    val videos: Videos? =Videos(),
     val views: Int,
     val downloads: Int,
     val likes: Int,
