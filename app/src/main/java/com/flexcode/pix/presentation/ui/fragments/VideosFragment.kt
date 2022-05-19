@@ -33,7 +33,6 @@ class VideosFragment : Fragment() {
 
         videoAdapter = VideoAdapter(VideoAdapter.OnClickListener {
             //TODO : navigate
-            //TODO: play
 
         })
 
