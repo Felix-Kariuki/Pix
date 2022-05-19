@@ -1,5 +1,5 @@
 # Pix
-Pix is an application that consumes the [PixabayApi]() and retrieves the pictures and videos. The app is built using MVVM design pattern to allow separation of concers. The App can work offline with the use cache strategy using Room.
+Pix is an application that consumes the [Pixabay Api]() and retrieves the pictures and videos. The app is built using MVVM design pattern to allow separation of concers. The App can work offline with the use cache strategy using Room.
 
 ## Architecture
 This Application is built following the Clean Architecture principles and  [MVVM]() Architecture. Clean Architecture attracts various advantages while building android apps which inlude:
@@ -49,16 +49,17 @@ See the graphical representation of the architecture
 ## Author
 Felix Kariuki
 
+<a href="https://www.buymeacoffee.com/felix.kariuki" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+
 Twitter - [@felixkariuki_](https://twitter.com/felixkariuki_)
 
 LinkedIn - [Felix Kariuki](https://www.linkedin.com/in/felix-kariuki/)
+
 
 ## License and Copyright
 
 [MIT LICENSE](LICENSE)
 ```
-MIT License
-
 MIT License
 
 Copyright (c) 2022 Felix m Kariuki
