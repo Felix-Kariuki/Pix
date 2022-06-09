@@ -6,6 +6,7 @@ plugins {
     id 'kotlin-parcelize'
     id 'androidx.navigation.safeargs.kotlin'
 }
+apply plugin: 'kotlin-android'
 
 android {
     compileSdk 32
@@ -92,6 +93,9 @@ dependencies {
 
     //circular image view
     implementation   'de.hdodenhof:circleimageview:3.1.0'
+    implementation "androidx.core:core-ktx:+"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
 
 }
+

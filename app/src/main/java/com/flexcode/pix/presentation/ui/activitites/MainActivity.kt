@@ -2,6 +2,7 @@ package com.flexcode.pix.presentation.ui.activitites
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.view.isVisible
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
@@ -35,9 +36,8 @@ class MainActivity : AppCompatActivity() {
         //hide bottom nav view
         navController.addOnDestinationChangedListener{_, destination, _->
             when(destination.id){
-                R.id.imageDetailFragment ->{
-                    binding.bottomNavigationView.invisible()
-                }
+                R.id.imageDetailFragment -> binding.bottomNavigationView.invisible()
+                else-> binding.bottomNavigationView.isVisible = true
             }
         }
     }
