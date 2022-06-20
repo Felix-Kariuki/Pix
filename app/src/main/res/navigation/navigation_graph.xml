@@ -39,5 +39,18 @@
         android:id="@+id/videosFragment"
         android:name="com.flexcode.pix.presentation.ui.fragments.VideosFragment"
         android:label="fragment_videos"
-        tools:layout="@layout/fragment_videos" />
+        tools:layout="@layout/fragment_videos" >
+        <action
+            android:id="@+id/action_videosFragment_to_videoDetailsFragment"
+            app:destination="@id/videoDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/videoDetailsFragment"
+        android:name="com.flexcode.pix.presentation.ui.fragments.VideoDetailsFragment"
+        android:label="fragment_video_details"
+        tools:layout="@layout/fragment_video_details" >
+        <argument
+            android:name="videoDetails"
+            app:argType="com.flexcode.pix.domain.model.Video"/>
+    </fragment>
 </navigation>

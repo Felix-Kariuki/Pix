@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import com.flexcode.pix.domain.model.Image
+import com.flexcode.pix.domain.model.Video
 import javax.inject.Inject
 
 class ImageDetailsViewModel @Inject constructor(
@@ -12,4 +13,7 @@ class ImageDetailsViewModel @Inject constructor(
 ): ViewModel() {
     private val _imageDetails = MutableLiveData(savedStateHandle.get<Image>("imageDetails"))
     val imageDetails: LiveData<Image?> = _imageDetails
+
+    private val _videoDetails = MutableLiveData(savedStateHandle.get<Video>("videoDetails"))
+    val videoDetails: LiveData<Video?> = _videoDetails
 }

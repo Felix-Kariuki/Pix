@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.flexcode.pix.R
 import com.flexcode.pix.databinding.FragmentVideosBinding
 import com.flexcode.pix.presentation.adapters.VideoAdapter
@@ -32,8 +33,8 @@ class VideosFragment : Fragment() {
         _binding = FragmentVideosBinding.inflate(inflater,container,false)
 
         videoAdapter = VideoAdapter(VideoAdapter.OnClickListener {
-            //TODO : navigate
-
+            val action = VideosFragmentDirections.actionVideosFragmentToVideoDetailsFragment(it)
+            findNavController().navigate(action)
         })
 
         binding.videoSearchView.setEndIconOnClickListener {

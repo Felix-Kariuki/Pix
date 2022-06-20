@@ -17,6 +17,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/ivVideoPlay"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:elevation="11dp"
+        android:src="@drawable/ic_play"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ivVideo"
+        app:layout_constraintBottom_toBottomOf="@id/ivVideo"
+        app:tint="@color/purple_700" />
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/ivVideoUserPoster"
         android:layout_width="60dp"
