@@ -1,0 +1,33 @@
+package com.flexcode.pix.core.util
+
+import android.app.Activity
+import android.view.View
+import android.view.inputmethod.InputMethodManager
+import androidx.fragment.app.Fragment
+import com.google.android.material.snackbar.Snackbar
+
+
+fun View.invisible() {
+    visibility = View.INVISIBLE
+}
+
+fun View.gone() {
+    visibility = View.GONE
+}
+
+fun View.visible() {
+    visibility = View.VISIBLE
+}
+
+fun Fragment.hideKeyboard(): Boolean {
+    return (context?.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager)
+        .hideSoftInputFromWindow((activity?.currentFocus ?: View(context)).windowToken, 0)
+}
+
+fun Fragment.showSnackbar(text: String) {
+    Snackbar.make(
+        requireView(),
+        text,
+        Snackbar.LENGTH_LONG
+    ).show()
+}

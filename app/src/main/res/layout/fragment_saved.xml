@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.ui.fragments.SavedFragment">
+    tools:context=".feature_video.presentation.ui.fragments.SavedFragment">
 
     <TextView
         android:layout_width="match_parent"

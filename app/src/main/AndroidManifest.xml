@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Pix">
         <activity
-            android:name=".presentation.ui.activitites.MainActivity"
+            android:name="com.flexcode.pix.core.activitites.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

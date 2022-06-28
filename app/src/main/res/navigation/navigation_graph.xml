@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.flexcode.pix.presentation.ui.fragments.HomeFragment"
+        android:name="com.flexcode.pix.feature_image.presentation.fragments.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home" >
 
@@ -23,21 +23,21 @@
     </fragment>
     <fragment
         android:id="@+id/imageDetailFragment"
-        android:name="com.flexcode.pix.presentation.ui.fragments.ImageDetailFragment"
+        android:name="com.flexcode.pix.feature_image.presentation.fragments.ImageDetailFragment"
         android:label="fragment_image_detail"
         tools:layout="@layout/fragment_image_detail" >
         <argument
             android:name="imageDetails"
-            app:argType="com.flexcode.pix.domain.model.Image"/>
+            app:argType="com.flexcode.pix.feature_image.domain.model.Image"/>
     </fragment>
     <fragment
         android:id="@+id/savedFragment"
-        android:name="com.flexcode.pix.presentation.ui.fragments.SavedFragment"
+        android:name="com.flexcode.pix.feature_video.presentation.ui.fragments.SavedFragment"
         android:label="fragment_saved"
         tools:layout="@layout/fragment_saved" />
     <fragment
         android:id="@+id/videosFragment"
-        android:name="com.flexcode.pix.presentation.ui.fragments.VideosFragment"
+        android:name="com.flexcode.pix.feature_video.presentation.ui.fragments.VideosFragment"
         android:label="fragment_videos"
         tools:layout="@layout/fragment_videos" >
         <action
@@ -46,11 +46,11 @@
     </fragment>
     <fragment
         android:id="@+id/videoDetailsFragment"
-        android:name="com.flexcode.pix.presentation.ui.fragments.VideoDetailsFragment"
+        android:name="com.flexcode.pix.feature_video.presentation.ui.fragments.VideoDetailsFragment"
         android:label="fragment_video_details"
         tools:layout="@layout/fragment_video_details" >
         <argument
             android:name="videoDetails"
-            app:argType="com.flexcode.pix.domain.model.Video"/>
+            app:argType="com.flexcode.pix.feature_video.domain.model.Video"/>
     </fragment>
 </navigation>
