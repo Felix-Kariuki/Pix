@@ -46,7 +46,6 @@ object ImageModule {
     }
 
 
-
     @Provides
     @Singleton
     fun providesDatabase(application: Application): Database {
@@ -56,6 +55,19 @@ object ImageModule {
             "local_db"
         )
             .build()
+    }
+
+
+    @Provides
+    @Singleton
+    fun providesImageApiService(): ImageApiService {
+        val retrofit = Retrofit.Builder()
+            .baseUrl(Constants.BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(ScalarsConverterFactory.create())
+            .build()
+
+        return retrofit.create(ImageApiService::class.java)
     }
 
 }

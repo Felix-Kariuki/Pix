@@ -55,6 +55,18 @@ object VideoModule {
         )
     }
 
+    @Provides
+    @Singleton
+    fun providesApiService(): VideoApiService {
+        val retrofit = Retrofit.Builder()
+            .baseUrl(Constants.BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(ScalarsConverterFactory.create())
+            .build()
+
+        return retrofit.create(VideoApiService::class.java)
+    }
+
 
 
 }
