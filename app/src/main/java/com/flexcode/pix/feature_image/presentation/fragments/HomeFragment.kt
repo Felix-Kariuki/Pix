@@ -29,10 +29,10 @@ class HomeFragment : Fragment() {
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater,container,false)
 
-        viewModel.searchQuery.value?.let { subscribeToObservers(it) }
+        viewModel.searchQuery.value?.let { searchImages(it) }
 
         binding.searchView.setEndIconOnClickListener {
-            subscribeToObservers(binding.searchView.editText!!.text.toString())
+            searchImages(binding.searchView.editText!!.text.toString())
             binding.imagesProgressBar.isVisible = true
             hideKeyboard()
         }
@@ -49,7 +49,7 @@ class HomeFragment : Fragment() {
     }
 
 
-    private fun subscribeToObservers(s: String) {
+    private fun searchImages(s: String) {
         viewLifecycleOwner.lifecycleScope.launchWhenCreated {
             viewModel.onSearch(s.trim()).collect { image->
              when(image) {
